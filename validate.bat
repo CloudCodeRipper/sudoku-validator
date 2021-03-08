@@ -9,6 +9,17 @@ if %jver% NEQ 11 (
     exit 1
 )
 
+if not exist %CURRENT_PATH%\gradle\wrapper\gradle-wrapper.jar (
+   call gradle -v
+   if %ERRORLEVEL% GEQ 1 (
+   echo Gradle is not installed or not configured.
+   echo Please use https://gradle.org/install/ for complete build tool installation
+   exit 1
+   )
+   call gradle wrapper
+   echo Gradle init completed
+)
+
 if not exist %CURRENT_PATH%\build\libs\sudoku-validator.jar (
    pushd.
    cd %CURRENT_PATH%/
@@ -16,6 +27,7 @@ if not exist %CURRENT_PATH%\build\libs\sudoku-validator.jar (
    popd
    echo Jar file was created
 )
+D:\Development\Projects\Java\sudoku-validator\gradle\wrapper\gradle-wrapper.jar
 
 java -jar %CURRENT_PATH%\build\libs\sudoku-validator.jar %1
 
