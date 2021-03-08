@@ -27,7 +27,7 @@ class AppTest {
         App.main(args);
         System.out.flush();
 
-        Assertions.assertEquals("0", baos.toString(Charset.defaultCharset()));
+        Assertions.assertEquals("0" + System.lineSeparator(), baos.toString(Charset.defaultCharset()));
 
     }
 
@@ -39,7 +39,7 @@ class AppTest {
         App.main(args);
         System.out.flush();
 
-        String expectedString = String.format("1%nERROR: Sequence has duplicate values. Board is not valid");
+        String expectedString = String.format("1%nERROR: Sequence has duplicate values. Board is not valid%n");
         Assertions.assertEquals(expectedString, baos.toString(Charset.defaultCharset()));
     }
 }

@@ -10,6 +10,13 @@ repositories {
     mavenCentral()
 }
 
+jar {
+    manifest {
+        attributes "Main-Class": "cloud/coderipper/App"
+    }
+    archiveFileName="${project.name}.jar"
+}
+
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.0-M1'
     testImplementation 'org.junit.jupiter:junit-jupiter-params'

@@ -24,10 +24,10 @@ public class App {
                         ValidationUtils.validateArray(board.getRow(i));
                         ValidationUtils.validateArray(board.getColumn(i));
                     });
-            System.out.print(0);
+            System.out.println(0);
         } catch (Exception e) {
             System.out.println(1);
-            System.out.print("ERROR: " + e.getMessage());
+            System.out.println("ERROR: " + e.getMessage());
         }
     }
 }
