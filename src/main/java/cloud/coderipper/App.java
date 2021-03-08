@@ -10,7 +10,7 @@ public class App {
 
     public static final int ROWS_NUMBER = 9;
     public static final int COLUMNS_NUMBER = 9;
-    public static final String DELIMITER_PATTERN = String.join("|", ",", System.lineSeparator());
+    public static final String DELIMITER_PATTERN = ",";
 
     public static void main(String[] args) {
         try {

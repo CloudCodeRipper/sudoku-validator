@@ -27,13 +27,13 @@ public class Board {
         Scanner sc = new Scanner(file);
         sc.useDelimiter(App.DELIMITER_PATTERN);
         int[][] matrix = new int[App.ROWS_NUMBER][App.COLUMNS_NUMBER];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++) {
-                if (sc.hasNext()) {
-                    String value = sc.next().trim();
-                    ValidationUtils.validateInputValue(value);
+        while (sc.hasNextLine()) {
+            for (int i = 0; i < matrix.length; i++) {
+                String[] line = sc.nextLine().trim().split(App.DELIMITER_PATTERN);
+                for (int j = 0; j < matrix[0].length; j++) {
+                    ValidationUtils.validateInputValue(line[j]);
 
-                    int number = Integer.parseInt(value);
+                    int number = Integer.parseInt(line[j]);
                     ValidationUtils.validateInputNumber(number);
 
                     matrix[i][j] = number;
